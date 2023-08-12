@@ -23,9 +23,9 @@ function Main(props){
             await fetch(API_URL, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'Application/json',
                 }, 
-                body: JSON.stringify(park)                
+                body: JSON.stringify(park),                
                 });
                 getPark();
         } catch (error) {
@@ -41,8 +41,14 @@ function Main(props){
     return (
         <main> 
             <Routes>
-                <Route path="/" element={<Index park={park} createPark={createPark}/>} />
-                <Route path="/myparks/:id" element={<Show park={park}/>} />
+                <Route 
+                    path="/" 
+                    element={<Index park={park} createPark={createPark}/>} 
+                />
+                <Route 
+                    path="/myparks/:id" 
+                    element={<Show park={park}/>} 
+                />
             </Routes>
         </main>
     );

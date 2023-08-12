@@ -46,12 +46,27 @@ function Index(props){
     return ( 
         <section>
             <form onSubmit={handleSubmit}>
-                <input type="text" value={newForm.parkName} onChange={handleChange} name="parkName" placeholder="McCarren Park..."/>
-                <input type="text" value={newForm.parkPhoto} onChange={handleChange} name="parkPhoto" placeholder="Url to image"/>
-                <input type="text" value={newForm.parkLink} onChange={handleChange} name="parkLink" placeholder="Link to park website"/>
+                <input 
+                type="text"
+                value={newForm.parkName} 
+                onChange={handleChange} 
+                name="parkName" 
+                placeholder="McCarren Park..."/>
+                <input 
+                type="text" 
+                value={newForm.parkPhoto} 
+                onChange={handleChange} 
+                name="parkPhoto" 
+                placeholder="Url to image"/>
+                <input 
+                type="text" 
+                value={newForm.parkLink} 
+                onChange={handleChange} 
+                name="parkLink" 
+                placeholder="Link to park website"/>
                 <input type="submit" value ="Add Park"/>
             </form> 
-            {props.park ? loaded() : loading()};
+            {props.park ? loaded() : loading()}
         </section>);
 };
 
