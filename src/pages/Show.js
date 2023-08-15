@@ -1,7 +1,8 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function Show(props){
+    const navigate = useNavigate();
     const { id } = useParams();
     const thisPark = props.park.find(p => p._id === id)
 
@@ -24,12 +25,18 @@ function Show(props){
         props.updatePark(editForm, thisPark._id);
     };
 
+    const handleDelete = () => {
+        props.deletePark(thisPark._id);
+        navigate('/');
+    };
+
     const loaded = () => {
         return (
             <>
                 <h1>{thisPark.parkName}</h1>
                 <img src={thisPark.parkPhoto} alt="park"/>
-                <a href={thisPark.parkLink}>Visit the website</a>            
+                <a href={thisPark.parkLink}>Visit the website</a> 
+                <button id="delete" onClick={handleDelete}>Delete</button>           
             </>
         );
     };

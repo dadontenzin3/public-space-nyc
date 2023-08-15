@@ -44,6 +44,13 @@ function Main(props){
         getPark();
     };
 
+    const deletePark = async(id) => {
+        await fetch(API_URL +id, {
+            method: 'DELETE',
+        });
+        getPark();
+    };
+
     useEffect(() => {
         getPark();
     }, []);
@@ -58,7 +65,8 @@ function Main(props){
                 <Route 
                     path="/myparks/:id" 
                     element={<Show park={park}
-                    updatePark={updatePark}/>} 
+                    updatePark={updatePark}
+                    deletePark={deletePark}/>} 
                 />
             </Routes>
         </main>
