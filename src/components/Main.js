@@ -6,7 +6,7 @@ import Show from '../pages/Show';
 function Main(props){
     const [ park, setPark ] = useState(null);
 
-    const API_URL = 'http://public-space-nyc.onrender.com/api/myparks/';
+    const API_URL = 'https://public-space-nyc.onrender.com/api/myparks/';
 
     const getPark = async() => {
         try {
