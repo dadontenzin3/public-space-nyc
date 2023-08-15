@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Index from '../pages/Index';
 import Show from '../pages/Show';
+import Home from '../pages/Home';
 
 function Main(props){
     const [ park, setPark ] = useState(null);
@@ -59,7 +60,11 @@ function Main(props){
         <main> 
             <Routes>
                 <Route 
-                    path="/" 
+                    path="/home" 
+                    element={<Home park={park} createPark={createPark}/>} 
+                />
+                <Route 
+                    path="/myparks" 
                     element={<Index park={park} createPark={createPark}/>} 
                 />
                 <Route 
