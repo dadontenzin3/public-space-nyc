@@ -33,6 +33,16 @@ function Main(props){
         }
     }
 
+    const updatePark = async (park, id) => {
+        await fetch(API_URL + id, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'Application/json',
+            },
+            body: JSON.stringify(park),
+        });
+        getPark();
+    };
 
     useEffect(() => {
         getPark();
@@ -47,7 +57,8 @@ function Main(props){
                 />
                 <Route 
                     path="/myparks/:id" 
-                    element={<Show park={park}/>} 
+                    element={<Show park={park}
+                    updatePark={updatePark}/>} 
                 />
             </Routes>
         </main>
