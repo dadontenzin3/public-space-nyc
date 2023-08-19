@@ -6,14 +6,26 @@ import Home from '../pages/Home';
 
 function Main(props){
     const [ park, setPark ] = useState(null);
+    const [ space, setSpace ] = useState(null);
 
     const API_URL = 'https://public-space-nyc.onrender.com/api/myparks/';
+    const NYC_URL = 'https://data.cityofnewyork.us/resource/enfh-gkve.json/';
 
     const getPark = async() => {
         try {
             const response = await fetch(API_URL);
             const data = await response.json();
             setPark(data);
+        } catch(error) {
+            //TODO: add logic
+        } 
+    };
+
+    const getSpace = async() => {
+        try {
+            const response = await fetch(NYC_URL);
+            const data = await response.json();
+            setSpace(data);
         } catch(error) {
             //TODO: add logic
         } 
@@ -54,6 +66,7 @@ function Main(props){
 
     useEffect(() => {
         getPark();
+        getSpace();
     }, []);
 
     return (
@@ -61,7 +74,7 @@ function Main(props){
             <Routes>
                 <Route 
                     path="/home" 
-                    element={<Home park={park} createPark={createPark}/>} 
+                    element={<Home space={space}/>} 
                 />
                 <Route 
                     path="/myparks" 
