@@ -42,7 +42,7 @@ function Home() {
           </Stack>
         </Col>
         <Col>
-          <Stack gap={4} className="d-flex justify-content-center align-items-center" style={{ height: '80vh' }}>
+          <Stack gap={4} className="d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
             <div className="p-2">Step 1: Customize your public park search.</div>
             <div className="p-2">
               <FontAwesomeIcon icon={faArrowDown} style={{ marginLeft: '5px' }} />

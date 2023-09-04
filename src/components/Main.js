@@ -4,6 +4,8 @@ import Index from '../pages/Index';
 import Show from '../pages/Show';
 import Browse from '../pages/Browse';
 import Home from '../pages/Home';
+import Detail from '../pages/Detail';
+
 
 function Main(props){
     const [ park, setPark ] = useState(null);
@@ -76,6 +78,10 @@ function Main(props){
                 <Route 
                     path="/browse" 
                     element={<Browse space={space}/>} 
+                />
+                <Route 
+                    path="/:id" 
+                    element={<Detail space={space}/>} 
                 />
                 <Route 
                     path="/home" 
