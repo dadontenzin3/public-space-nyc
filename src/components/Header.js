@@ -1,21 +1,25 @@
-import { Link } from 'react-router-dom';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav'
+import Button from 'react-bootstrap/Button'
+
 
 function Header(props){
     return (
-        <nav className="nav">
-               
-            <ul>
-                <Link to="/home" className="my-link-class logo">
-                    <li> Public Space NYC </li>
-                </Link>                 
-                <Link to="/home" className="my-link-class"><li>Home</li></Link>
-                <Link to="/about" className="my-link-class"><li>About</li></Link>
-                <Link to="/myparks" className="my-link-class"><li>Saved Spaces</li></Link>
-                <Link to="/myreviews" className="my-link-class"><li>My Reviews</li></Link>
-                <Link to="/account" className="my-link-class"><li>My Account</li></Link>
-            </ul>
-        </nav>
+        <Navbar bg="dark" data-bs-theme="dark" style={{height: "100px"}}> 
+            <Container fluid>
+                    <Navbar.Brand href="/home" style={{fontSize: "30px"}}>
+                        <li> Public Space NYC </li>
+                    </Navbar.Brand> 
+                    <Nav className="ms-auto">
+                        <Nav.Link href="/home"><Button variant="outline-light" size="lg">Home</Button></Nav.Link>
+                        <Nav.Link href="/browse"><Button variant="outline-light" size="lg">Browse</Button></Nav.Link>
+                        <Nav.Link href="/myparks"><Button variant="outline-light" size="lg">My Parks</Button></Nav.Link>
+                        <Nav.Link href="/myreviews"><Button variant="outline-light" size="lg">My Reviews</Button></Nav.Link>
+                        <Nav.Link href="/account"><Button variant="outline-light" size="lg">My Account</Button></Nav.Link>
+                    </Nav>
+            </Container>
+        </Navbar>
     );
 }
-
 export default Header; 

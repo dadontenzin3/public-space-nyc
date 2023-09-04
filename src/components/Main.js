@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Index from '../pages/Index';
 import Show from '../pages/Show';
+import Browse from '../pages/Browse';
 import Home from '../pages/Home';
 
 function Main(props){
@@ -73,8 +74,12 @@ function Main(props){
         <main> 
             <Routes>
                 <Route 
+                    path="/browse" 
+                    element={<Browse space={space}/>} 
+                />
+                <Route 
                     path="/home" 
-                    element={<Home space={space}/>} 
+                    element={<Home />} 
                 />
                 <Route 
                     path="/myparks" 
