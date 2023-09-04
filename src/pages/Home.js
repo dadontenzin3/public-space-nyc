@@ -5,6 +5,8 @@ import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import Button from 'react-bootstrap/Button';
+
 
 function Home() {
   const [text, setText] = useState('');
@@ -40,12 +42,12 @@ function Home() {
           </Stack>
         </Col>
         <Col>
-          <Stack gap={4} className="d-flex justify-content-center align-items-center" style={{ height: '70vh' }}>
+          <Stack gap={4} className="d-flex justify-content-center align-items-center" style={{ height: '80vh' }}>
             <div className="p-2">Step 1: Customize your public park search.</div>
             <div className="p-2">
               <FontAwesomeIcon icon={faArrowDown} style={{ marginLeft: '5px' }} />
             </div>
-            <div className="p-2">Step 2: Explore New York's extensive public park listings.</div>
+            <div className="p-2">Step 2: Explore New York City's extensive public park listings.</div>
             <div className="p-2">
               <FontAwesomeIcon icon={faArrowDown} style={{ marginLeft: '5px' }} />
             </div>
@@ -57,8 +59,9 @@ function Home() {
             <div className="p-2">
               <FontAwesomeIcon icon={faArrowDown} style={{ marginLeft: '5px' }} />
             </div>
-            <div className="p-2">Step 5: Repeat.</div>          
-            </Stack>
+            <div className="p-2">Step 5: Repeat.</div> 
+            <div className="p-5"><Button variant="primary" size="lg" href="/browse">Get Started</Button></div>   
+        </Stack>
         </Col>
       </Row>
     </Container>
